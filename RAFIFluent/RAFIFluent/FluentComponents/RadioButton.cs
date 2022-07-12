@@ -5,16 +5,19 @@ using Xamarin.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
-    public class CheckBox : Xamarin.Forms.CheckBox
-    {
+    
+    // To be implemented 
+    //Reason: As of now, there is no way to change the circle color
+    //without having to use control templates
 
+    public class RadioButton : Xamarin.Forms.RadioButton
+    {
         FluentColor colors = new FluentColor();
 
-        public CheckBox()
+        public RadioButton()
         {
             InitVisualStates();
         }
-
         void InitVisualStates()
         {
             VisualStateManager.SetVisualStateGroups(this, new VisualStateGroupList
@@ -22,25 +25,25 @@ namespace RAFIFluent.FluentComponents
                 new VisualStateGroup
                 {
                     Name="CommonStates",
-                    TargetType=typeof(CheckBox),
+                    TargetType=typeof(RadioButton),
                     States =
                     {
                         new VisualState
-                        {   
-                            Name = "Normal",
-                            TargetType = typeof(Xamarin.Forms.CheckBox),
+                        {
+                            Name = "Checked",
+                            TargetType = typeof(Xamarin.Forms.RadioButton),
                             Setters =
                             {
-                                new Setter {Property = ColorProperty, Value = colors.NeutralTertiaryAlt }
+                                new Setter { Property = BorderColorProperty, Value = colors.ThemePrimary }
                             }
                         },
                         new VisualState
                         {
-                            Name = "IsChecked",
-                            TargetType = typeof(Xamarin.Forms.CheckBox),
+                            Name = "Unchecked",
+                            TargetType = typeof(Xamarin.Forms.RadioButton),
                             Setters =
                             {
-                                new Setter { Property = ColorProperty , Value = colors.ThemePrimary }
+                                new Setter {Property = BorderColorProperty, Value = colors.ThemePrimary }
                             }
 
                         }
@@ -48,6 +51,6 @@ namespace RAFIFluent.FluentComponents
                 }
             });
         }
+
     }
 }
-

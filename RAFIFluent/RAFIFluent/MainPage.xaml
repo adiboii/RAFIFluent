@@ -11,7 +11,8 @@
         
         <fluent:CheckBox/>
         <fluent:Toggle/>
-
+        <fluent:RadioButton/>
+        <fluent:RadioButton/>
     </StackLayout>
 
 </ContentPage>
