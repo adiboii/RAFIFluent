@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAFIFluent.FluentComponents.Control.RadioButton">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="ThemeRadioTemplate">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    HasShadow="False"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                    <Grid Margin="2" WidthRequest="20">
+                        <Grid
+                            HeightRequest="20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="20">
+                            <Ellipse
+                                x:Name="Uncheck"
+                                Fill="White"
+                                HeightRequest="18"
+                                HorizontalOptions="Center"
+                                Stroke="#0078d4"
+                                StrokeThickness="1.5"
+                                VerticalOptions="Center"
+                                BackgroundColor="Transparent"
+                                WidthRequest="18" />
+                            <Ellipse
+                                x:Name="Check"
+                                BackgroundColor="Transparent"
+                                Fill="#0078d4"
+                                HeightRequest="12"
+                                HorizontalOptions="Center"
+                                Stroke="#0078d4"
+                                StrokeThickness="5"
+                                VerticalOptions="Center"
+                                WidthRequest="12" />
+                        </Grid>
+                        <!-- This enables us to put in dynamic content -->
+                        <ContentPresenter />
+                    </Grid>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter Property="BorderColor" Value="Transparent" />
+                                        <Setter TargetName="Check" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter Property="BorderColor" Value="#F3F2F1" />
+                                        <Setter TargetName="Check" Property="Opacity" Value="0" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Frame>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <RadioButton 
+        ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+</ContentView>

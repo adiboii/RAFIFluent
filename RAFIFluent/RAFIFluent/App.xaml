@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RAFIFluent.App">
+    <Application.Resources>
+
+
+        <!--Colors-->
+        <!-- Resources Used -->
+        <!-- https://developer.microsoft.com/en-us/fluentui#/styles/web/colors/theme-slots -->
+
+        <!--Blue-->
+        <Color x:Key="ThemeDarker">#004578</Color>
+        <Color x:Key="ThemeDark">#005a9e</Color>
+        <Color x:Key="ThemeDarkAlt">#106ebe</Color>
+        <Color x:Key="ThemePrimary">#0078d4</Color>
+        <Color x:Key="ThemeSecondary">#2b88d8</Color>
+        <Color x:Key="ThemeTertiary">#71afe5</Color>
+        <Color x:Key="ThemeLight">#c7e0f4</Color>
+        <Color x:Key="ThemeLighter">#deecf9</Color>
+        <Color x:Key="ThemeLightAlt">#eff6fc</Color>
+
+        <!-- Neutral Colors -->
+        <Color x:Key="Black">#000000</Color>
+        <Color x:Key="NeutralDark">#201f1e</Color>
+        <Color x:Key="NeutralPrimary">#323130</Color>
+        <Color x:Key="NeutralPrimaryAlt">#3b3a39</Color>
+        <Color x:Key="NeutralSecondary">#605e5c</Color>
+        <Color x:Key="NeutralSecondaryAlt">#8a8886e</Color>
+        <Color x:Key="NeutralTertiary">#a19f9d</Color>
+        <Color x:Key="NeutralTertiaryAlt">#c8c6c4</Color>
+        <Color x:Key="NeutralQuaternary">#d2d0ce</Color>
+        <Color x:Key="NeutralQuaternaryAlt">#e1dfdd</Color>
+        <Color x:Key="NeutralLight">#edebe9</Color>
+        <Color x:Key="NeutralLighter">#f3f2f1</Color>
+        <Color x:Key="NeutralLighterAlt">#faf9f8</Color>
+        <Color x:Key="White">#ffffff</Color>
+
+
+        <!--Accent colors-->
+
+        <Color x:Key="YellowDark">#d29200</Color>
+        <Color x:Key="Yellow">#ffb900</Color>
+        <Color x:Key="YellowLight">#fff100</Color>
+        <Color x:Key="Orange">#d83b01</Color>
+        <Color x:Key="OrangeLight">#ea4300</Color>
+        <Color x:Key="OrangeLighter">#ff8c00</Color>
+        <Color x:Key="RedDark">#a4262c</Color>
+        <Color x:Key="Red">#d13438</Color>
+        <Color x:Key="MagentaDark">#5c005c</Color>
+        <Color x:Key="Magenta">#b4009e</Color>
+        <Color x:Key="MagentaLight">#e3008c</Color>
+        <Color x:Key="PurpleDark">#32145a</Color>
+        <Color x:Key="Purple">#5c2d91</Color>
+        <Color x:Key="PurpleLight">#b4a0ff</Color>
+        <Color x:Key="BlueDark">#002050</Color>
+        <Color x:Key="BlueMid">#00188f</Color>
+        <Color x:Key="Blue">#0078d4</Color>
+        <Color x:Key="BlueLight">#00bcf2</Color>
+        <Color x:Key="TealDark">#004b50</Color>
+        <Color x:Key="Teal">#008272</Color>
+        <Color x:Key="TealLight">#00B294</Color>
+        <Color x:Key="GreenDark">#004b1c</Color>
+        <Color x:Key="Green">#107c10</Color>
+        <Color x:Key="GreenLight">#bad80a</Color>
+
+
+    </Application.Resources>
+</Application>
