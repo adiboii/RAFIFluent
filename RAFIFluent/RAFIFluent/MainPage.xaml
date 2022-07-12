@@ -9,8 +9,9 @@
         VerticalOptions="Center"
         HorizontalOptions="Center">
         
-        <fluent:FluentCheckBox/>
-        
+        <fluent:CheckBox/>
+        <fluent:Toggle/>
+
     </StackLayout>
 
 </ContentPage>
