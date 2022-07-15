@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using RAFIFluent.Droid;
 using RAFIFluent.FluentComponents;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(TextBox), typeof(TextBoxAndroid))]
+[assembly: ExportRenderer(typeof(RAFIFluent.FluentComponents.TextBox), typeof(TextBoxAndroid))]
 namespace RAFIFluent.Droid
 {
     public class TextBoxAndroid : EntryRenderer
@@ -21,7 +22,7 @@ namespace RAFIFluent.Droid
         {
 
         }
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Entry> e)
         {
             base.OnElementChanged(e);
             Control?.SetBackgroundColor(Android.Graphics.Color.Transparent);

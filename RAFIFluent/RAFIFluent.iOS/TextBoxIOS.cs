@@ -9,13 +9,13 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(TextBox), typeof(TextBoxIOS))]
+[assembly: ExportRenderer(typeof(RAFIFluent.FluentComponents.TextBox), typeof(TextBoxIOS))]
 namespace RAFIFluent.iOS
 {
     public class TextBoxIOS : EntryRenderer
     {
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Entry> e)
         {
             base.OnElementChanged(e);
 
