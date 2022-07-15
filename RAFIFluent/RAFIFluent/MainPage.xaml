@@ -2,17 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:fluent="clr-namespace:RAFIFluent.FluentComponents"
-             
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="RAFIFluent.MainPage">
 
-    <StackLayout
-        VerticalOptions="Center"
-        HorizontalOptions="Center">
-        
-        <fluent:CheckBox/>
-        <fluent:Toggle/>
-        <fluent:RadioButton/>
-        <fluent:RadioButton/>
-    </StackLayout>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            Grid.Row="0"
+            VerticalOptions="Start"
+            HorizontalOptions="Center">
+            <fluent:AppBar
+                
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="500"/>
+        </StackLayout>
+        
+        <StackLayout
+            Grid.Row="1">
+            <Frame
+                HorizontalOptions="Center"
+                Padding="10, 0"
+                WidthRequest="250"
+                BackgroundColor="{StaticResource NeutralLight}">
+                <fluent:TextBox
+                    Placeholder="Default"
+                    ClearButtonVisibility="WhileEditing"/>
+            </Frame>
+
+            <fluent:FramedTextBox
+                    HorizontalOptions="Center"
+                    IconSource="Search.svg"
+                    WidthRequest="250"/>
+        </StackLayout>
+    </Grid>
 </ContentPage>
