@@ -1,0 +1,17 @@
+<svg width="82" height="135" viewBox="0 0 82 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.21367 66.6795L39.3932 45.3105" stroke="white" stroke-width="4"/>
+<path d="M39.3933 45.3105V3" stroke="white" stroke-width="4"/>
+<path d="M2.21367 66.6794L39.3932 88.0484" stroke="white" stroke-width="4"/>
+<path d="M2.21367 24.1553L39.3932 45.5242" stroke="white" stroke-width="4"/>
+<path d="M39.3933 87.8347V45.5242" stroke="white" stroke-width="4"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M77 24.3333L39.5 3L2 24.3333V67V109.667L39.5 131V88.3333L77 67L39.5 45.6667L77 24.3333Z" stroke="url(#paint0_angular_7189_135)" stroke-width="4"/>
+<defs>
+<radialGradient id="paint0_angular_7189_135" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39.5 67) scale(37.5 64)">
+<stop offset="0.125191" stop-color="#CF8FFF"/>
+<stop offset="0.375179" stop-color="#0078D4"/>
+<stop offset="0.62518" stop-color="#4FE5FF"/>
+<stop offset="0.874595" stop-color="#69E56E"/>
+<stop offset="1" stop-color="#CF8FFF"/>
+</radialGradient>
+</defs>
+</svg>
