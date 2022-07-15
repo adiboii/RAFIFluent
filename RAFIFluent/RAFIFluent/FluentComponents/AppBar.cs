@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using FFImageLoading.Forms;
+using FFImageLoading.Svg.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
@@ -18,7 +20,25 @@ namespace RAFIFluent.FluentComponents
         {
             Source = "persona.png",
         };
-        //Image persona = new Image();
+
+        Icon icon = new Icon()
+        {
+            Source = "Logo.svg"
+        };
+
+        public static readonly BindableProperty iconSource = BindableProperty.Create(
+          "IconSource", typeof(string), typeof(Icon), "Logo.svg");
+
+        public string IconSource
+        {
+            get { return (string)GetValue(AppBar.iconSource); }
+            set
+            {
+                SetValue(AppBar.iconSource, value);
+                icon.Source = value;
+            }
+        }
+
         // Constructor
         public AppBar()
         {
@@ -26,7 +46,6 @@ namespace RAFIFluent.FluentComponents
             this.Margin = new Thickness(0, 0);
             this.Content = appBar;
 
-            
             persona.Padding = new Thickness(0);
             persona.Margin = new Thickness(0);
             persona.FrameSize = FrameSizes.M;
@@ -52,14 +71,13 @@ namespace RAFIFluent.FluentComponents
                 HorizontalOptions = LayoutOptions.Center,
                 Padding = new Thickness(0, 0),
             };
-           
 
             titles.Orientation = StackOrientation.Vertical;
             titles.BackgroundColor = Color.Transparent;
             titles.Spacing = 0;
             titles.Children.Add(title);
             titles.Children.Add(subtitle);
-
+            icon.Source = IconSource;
             appBar.Orientation = StackOrientation.Horizontal;
             appBar.BackgroundColor = Color.Transparent;
             appBar.Spacing = 16;
@@ -68,7 +86,7 @@ namespace RAFIFluent.FluentComponents
             appBar.VerticalOptions = LayoutOptions.Start;
             appBar.Padding = new Thickness(15, 15);
             appBar.Margin = new Thickness(0);
-            appBar.Children.Add(persona);
+            appBar.Children.Add(icon);
             appBar.Children.Add(titles);
         }
 
