@@ -134,4 +134,7 @@
       <Name>RAFIFluent</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.svg" />
+  </ItemGroup>
 </Project>

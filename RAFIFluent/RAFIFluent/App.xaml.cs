@@ -9,7 +9,6 @@ namespace RAFIFluent
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
