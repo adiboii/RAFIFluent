@@ -6,11 +6,43 @@ namespace RAFIFluent.FluentComponents
 {
     public class Toggle : Switch
     {
-        FluentColor colors = new FluentColor();
+        static FluentColor colors = new FluentColor();
+
+        public static readonly BindableProperty activeThumbColor = BindableProperty.Create(
+         "ActiveThumbColor", typeof(Color), typeof(Chip), colors.ThemePrimary);
+
+        public Color ActiveThumbColor
+        {
+            get { return (Color)GetValue(Toggle.activeThumbColor); }
+            set { SetValue(Toggle.activeThumbColor, value); }
+        }
+
+
+        public static readonly BindableProperty inactiveThumbColor = BindableProperty.Create(
+       "InactiveThumbColor", typeof(Color), typeof(Chip), colors.NeutralLight);
+
+        public Color InactiveThumbColor
+        {
+            get { return (Color)GetValue(Toggle.inactiveThumbColor); }
+            set { SetValue(Toggle.inactiveThumbColor, value); }
+        }
+
+
+        public static readonly BindableProperty activeOnColor = BindableProperty.Create(
+       "ActiveOnColor", typeof(Color), typeof(Chip), colors.ThemeTertiary);
+
+        public Color ActiveOnColor
+        {
+            get { return (Color)GetValue(Toggle.activeOnColor); }
+            set 
+            { SetValue(Toggle.activeOnColor, value); }
+        }
+
+
 
         public Toggle()
         {
-            InitVisualStates();
+            InitVisualStates();   
         }
 
         void InitVisualStates()
@@ -29,8 +61,8 @@ namespace RAFIFluent.FluentComponents
                             TargetType = typeof(Switch),
                             Setters =
                             {
-                               new Setter { Property = OnColorProperty, Value = colors.ThemeTertiary },
-                               new Setter { Property = ThumbColorProperty, Value = colors.ThemePrimary }
+                               new Setter { Property = OnColorProperty, Value =  ActiveOnColor},
+                               new Setter { Property = ThumbColorProperty, Value = ActiveThumbColor }
                             }
                         },
                         new VisualState
@@ -39,7 +71,7 @@ namespace RAFIFluent.FluentComponents
                             TargetType = typeof(Switch),
                             Setters =
                             {
-                               new Setter { Property = ThumbColorProperty, Value = colors.NeutralLight }
+                               new Setter { Property = ThumbColorProperty, Value = InactiveThumbColor }
                             }
 
                         }
@@ -48,7 +80,6 @@ namespace RAFIFluent.FluentComponents
             });
         }
 
-    }
 
- 
+    }
 }
