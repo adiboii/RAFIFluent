@@ -7,12 +7,20 @@ using Xamarin.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
+
+    //FramedTextBox is an icon and textbox
+    //in a stacklayout enclosed in a frame
+
     public class FramedTextBox : Xamarin.Forms.Frame
     {
+
+        // Local Declarations
         FluentColor colors = new FluentColor();
         TextBox textbox = new TextBox();
         Icon icon = new Icon();
 
+
+        // Bindable Properties + Getters and Setters
         public static readonly BindableProperty placeHolder = BindableProperty.Create(
            "PlaceHolder", typeof(string), typeof(FramedTextBox), "Search");
         public string PlaceHolder 
@@ -73,6 +81,8 @@ namespace RAFIFluent.FluentComponents
             }
         }
 
+        
+        
         public FramedTextBox()
         {
             BackgroundColor = colors.NeutralLight;

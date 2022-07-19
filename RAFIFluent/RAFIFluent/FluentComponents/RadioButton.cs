@@ -5,10 +5,11 @@ using Xamarin.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
-    
-    // To be implemented 
-    //Reason: As of now, there is no way to change the circle color
-    //without having to use control templates
+
+    // !To implement
+    //As of now, there is no way to change the circle color
+    //without having to use control templates, and there are 
+    //not many documentations of it being used in C#
 
     public class RadioButton : Xamarin.Forms.RadioButton
     {

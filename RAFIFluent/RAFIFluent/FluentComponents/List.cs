@@ -5,7 +5,8 @@ using Xamarin.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
-    internal class List : ListView
+    // !To implement
+    public class List : ListView
     {
         
     }

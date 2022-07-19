@@ -8,6 +8,7 @@ namespace RAFIFluent.FluentComponents
     public class CheckBox : Xamarin.Forms.CheckBox
     {
 
+        // Local Decalarations
         FluentColor colors = new FluentColor();
 
         public CheckBox()
@@ -15,6 +16,8 @@ namespace RAFIFluent.FluentComponents
             InitVisualStates();
         }
 
+
+        // Changing default colors of checkbox
         void InitVisualStates()
         {
             VisualStateManager.SetVisualStateGroups(this, new VisualStateGroupList

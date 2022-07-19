@@ -6,12 +6,16 @@ using Xamarin.Forms;
 
 namespace RAFIFluent.FluentComponents
 {
+
+    // ! Will need to implement gesture detector first
     public class Chip : Frame
     {
-        static FluentColor colors = new FluentColor();
+        // Local Declarations
+        FluentColor colors = new FluentColor();
         Image image = new Image();
         Label text = new Label();
 
+        // Bindable Properties + Getters and Setters
         public static readonly BindableProperty label = BindableProperty.Create(
           "Label", typeof(string), typeof(Chip), "Hello");
 
@@ -27,7 +31,7 @@ namespace RAFIFluent.FluentComponents
 
 
         public static readonly BindableProperty textColor = BindableProperty.Create(
-          "TextColor", typeof(Color), typeof(Chip), colors.NeutralDark);
+          "TextColor", typeof(Color), typeof(Chip), Color.Black);
 
         public Color TextColor
         {
@@ -53,6 +57,7 @@ namespace RAFIFluent.FluentComponents
             }
         }
 
+        //Constructor
         public Chip()
         {
             StackLayout stack = new StackLayout();
@@ -66,13 +71,9 @@ namespace RAFIFluent.FluentComponents
             image.HeightRequest = 15;
             image.VerticalOptions = LayoutOptions.Center;
             image.HorizontalOptions = LayoutOptions.Center;
-            //Text.HorizontalOptions = LayoutOptions.Center;
-            //Text.VerticalOptions = LayoutOptions.Center;
-            //Text.FontAttributes = FontAttributes.Bold;
 
             stack.Children.Add(image);
             stack.Children.Add(text);
-            //this.Text = Label;
             this.HorizontalOptions = LayoutOptions.Center;
             this.VerticalOptions = LayoutOptions.Center;
             this.Padding = new Thickness(5, 5);
