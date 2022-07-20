@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RAFIFluent.iOS</RootNamespace>
+    <RootNamespace>component.xamarin.fluentui.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RAFIFluent.iOS</AssemblyName>
+    <AssemblyName>component.xamarin.fluentui.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -129,9 +129,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\RAFIFluent\RAFIFluent.csproj">
-      <Project>{8C7D74BA-9C78-47E2-8FC2-09512C695EAA}</Project>
-      <Name>RAFIFluent</Name>
+    <ProjectReference Include="..\RAFIFluent\component.xamarin.fluentui.csproj">
+      <Project>{77829CCD-7727-497F-827C-055A6EAC44F9}</Project>
+      <Name>component.xamarin.fluentui</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

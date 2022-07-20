@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace RAFIFluent.iOS
+namespace component.xamarin.fluentui.iOS
 {
     public class Application
     {

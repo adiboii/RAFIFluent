@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace RAFIFluent
+namespace component.xamarin.fluentui
 {
     public partial class App : Application
     {

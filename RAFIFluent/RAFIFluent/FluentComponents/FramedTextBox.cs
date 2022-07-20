@@ -5,7 +5,7 @@ using System.Text;
 using Xamarin.Forms;
 
 
-namespace RAFIFluent.FluentComponents
+namespace component.xamarin.fluentui.FluentComponents
 {
 
     //FramedTextBox is an icon and textbox

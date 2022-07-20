@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace RAFIFluent.FluentComponents
+namespace component.xamarin.fluentui.FluentComponents
 {
 
     // TODO: Implement gesture detector 

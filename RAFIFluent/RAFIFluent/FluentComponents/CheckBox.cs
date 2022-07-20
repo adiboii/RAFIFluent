@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace RAFIFluent.FluentComponents
+namespace component.xamarin.fluentui.FluentComponents
 {
     public class CheckBox : Xamarin.Forms.CheckBox
     {

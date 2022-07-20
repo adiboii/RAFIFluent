@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace RAFIFluent.FluentComponents
+namespace component.xamarin.fluentui.FluentComponents
 {
     // !IMPORTANT! This does not work!
     // As of now, there is no way to change the circle color

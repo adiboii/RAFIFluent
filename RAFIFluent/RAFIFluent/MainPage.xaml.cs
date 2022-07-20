@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace RAFIFluent
+namespace component.xamarin.fluentui
 {
     public partial class MainPage : ContentPage
     {

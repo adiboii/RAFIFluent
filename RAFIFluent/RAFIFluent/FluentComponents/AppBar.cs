@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using FFImageLoading.Forms;
 using FFImageLoading.Svg.Forms;
 
-namespace RAFIFluent.FluentComponents
+namespace component.xamarin.fluentui.FluentComponents
 {
     internal class AppBar : Frame
     {

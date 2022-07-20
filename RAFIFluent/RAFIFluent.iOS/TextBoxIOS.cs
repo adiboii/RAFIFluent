@@ -1,6 +1,6 @@
 ﻿using Foundation;
-using RAFIFluent.FluentComponents;
-using RAFIFluent.iOS;
+using component.xamarin.fluentui.FluentComponents;
+using component.xamarin.fluentui.iOS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +9,8 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(RAFIFluent.FluentComponents.TextBox), typeof(TextBoxIOS))]
-namespace RAFIFluent.iOS
+[assembly: ExportRenderer(typeof(component.xamarin.fluentui.FluentComponents.TextBox), typeof(TextBoxIOS))]
+namespace component.xamarin.fluentui.iOS
 {
     public class TextBoxIOS : EntryRenderer
     {

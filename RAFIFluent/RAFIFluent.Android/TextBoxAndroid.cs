@@ -4,8 +4,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using RAFIFluent.Droid;
-using RAFIFluent.FluentComponents;
+using component.xamarin.fluentui.Droid;
+using component.xamarin.fluentui.FluentComponents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,8 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(RAFIFluent.FluentComponents.TextBox), typeof(TextBoxAndroid))]
-namespace RAFIFluent.Droid
+[assembly: ExportRenderer(typeof(component.xamarin.fluentui.FluentComponents.TextBox), typeof(TextBoxAndroid))]
+namespace component.xamarin.fluentui.Droid
 {
     public class TextBoxAndroid : EntryRenderer
     {
