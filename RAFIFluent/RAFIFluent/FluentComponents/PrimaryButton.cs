@@ -7,31 +7,30 @@ namespace RAFIFluent.FluentComponents
 {
     public class PrimaryButton : Button
     {
-        // Local Declartions
-        FluentColor colors = new FluentColor();
+        // Constants
+        FluentColor _colors = new FluentColor();
 
-        // Constructors
-        public PrimaryButton()
-        {
-            this.BackgroundColor = colors.ThemePrimary;
-        }
-
-        // Bindable Properties
+        // Properties/Indexers
         public static readonly BindableProperty darkMode = BindableProperty.Create(
             "DarkMode", typeof(bool), typeof(PrimaryButton), false);
 
-        // Getters and Setters
         public bool DarkMode
         {
             get { return (bool)GetValue(PrimaryButton.darkMode); }
             set
-            { 
-              SetValue(PrimaryButton.darkMode, value);
-              if (this.DarkMode == true)
-                this.TextColor = colors.Black;
-              else
-                this.TextColor = colors.White;
+            {
+                SetValue(PrimaryButton.darkMode, value);
+                if (this.DarkMode == true)
+                    this.TextColor = _colors.Black;
+                else
+                    this.TextColor = _colors.White;
             }
+        }
+
+        // Constructor
+        public PrimaryButton()
+        {
+            this.BackgroundColor = _colors.ThemePrimary;
         }
     }
 }

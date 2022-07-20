@@ -7,36 +7,12 @@ namespace RAFIFluent.FluentComponents
 {
     public class Persona : Frame
     {
-        // Legend:
-        //  Course of Action (COA)
-        //
-        // To-Do List | FluentPersona
-        // 1. Name Attribute
-        //    1.A. Situation: "Name" has already been initialized
-        //         COA: Erase "Name" attribute
-        //         Problem: Initials are still displayed
-        //    2.A. 
+        // Constants
+        FluentColor _colors = new FluentColor();
+        Label _initials = new Label();
+        Image _picture = new Image();
 
-        // Local Declarations
-        FluentColor colors = new FluentColor();
-        Label initials = new Label();
-        Image picture = new Image();
-
-        // Constructor
-        public Persona()
-        {
-            CornerRadius = 100;
-            HeightRequest = 32;
-            WidthRequest = 32;
-            HorizontalOptions = LayoutOptions.Center;
-            Padding = 0;
-            IsClippedToBounds = true;
-            BackgroundColor = colors.ThemePrimary;
-            initials.TextColor = colors.White;
-            initials.Text = string.Empty;
-        }
-
-        // Bindable Properties
+        // Properties/Indexers
         public static readonly BindableProperty frameSize = BindableProperty.Create(
             "FrameSize", typeof(FrameSizes), typeof(Persona), FrameSizes.M);
 
@@ -49,7 +25,6 @@ namespace RAFIFluent.FluentComponents
         public static readonly BindableProperty source = BindableProperty.Create(
             "Source", typeof(string), typeof(Persona), "");
 
-        // Getters and Setters
         public FrameSizes FrameSize
         {
             get { return (FrameSizes)GetValue(frameSize); }
@@ -89,6 +64,7 @@ namespace RAFIFluent.FluentComponents
                 }
             }
         }
+
         public string Name
         {
             get { return (string)GetValue(name); }
@@ -96,7 +72,7 @@ namespace RAFIFluent.FluentComponents
             {
                 SetValue(name, value);
                 if (value == string.Empty)
-                    initials.Text = string.Empty;
+                    _initials.Text = string.Empty;
                 else
                 {
                     string firstName = string.Empty;
@@ -123,14 +99,15 @@ namespace RAFIFluent.FluentComponents
 
                     string inits = firstName[0].ToString() + lastName[0].ToString();
 
-                    initials.Text = inits;
-                    initials.TextTransform = TextTransform.Uppercase;
-                    initials.HorizontalOptions = LayoutOptions.Center;
-                    initials.VerticalOptions = LayoutOptions.Center;
+                    _initials.Text = inits;
+                    _initials.TextTransform = TextTransform.Uppercase;
+                    _initials.HorizontalOptions = LayoutOptions.Center;
+                    _initials.VerticalOptions = LayoutOptions.Center;
                 }
-                Content = initials;
+                Content = _initials;
             }
         }
+
         public bool DarkMode
         {
             get { return (bool)GetValue(darkMode); }
@@ -138,11 +115,12 @@ namespace RAFIFluent.FluentComponents
             {
                 SetValue(darkMode, value);
                 if (value)
-                    initials.TextColor = colors.Black;
+                    _initials.TextColor = _colors.Black;
                 else if (!value)
-                    initials.TextColor = colors.White;
+                    _initials.TextColor = _colors.White;
             }
         }
+
         public string Source
         {
             get { return (string)GetValue(source); }
@@ -151,30 +129,45 @@ namespace RAFIFluent.FluentComponents
                 SetValue(source, value);
                 if (value != "")
                 {
-                    picture.Source = value;
-                    Content = picture;
+                    _picture.Source = value;
+                    Content = _picture;
                 }
             }
         }
 
-        // Functions
+        // Constructors
+        public Persona()
+        {
+            CornerRadius = 100;
+            HeightRequest = 32;
+            WidthRequest = 32;
+            HorizontalOptions = LayoutOptions.Center;
+            Padding = 0;
+            IsClippedToBounds = true;
+            BackgroundColor = _colors.ThemePrimary;
+            _initials.TextColor = _colors.White;
+            _initials.Text = string.Empty;
+        }
+
+        // Methods 
         public bool IsRomanNumeral(string word)
         {
             // "previousValue" is initialized to 1001
             // since the largest value of a Roman numeral
-            // character is 1000
+            // character is 1000.
             int previousValue = 1001;
 
             // "previousChar" is initialized to 'A'
-            // since 'A' is not a Roman numeral character
+            // since 'A' is not a Roman numeral character.
             char previousChar = 'A';
-            int nPreviousChar = 0; // Succeeding number of occurrences of the previous character
+            // Succeeding number of occurrences of the previous character.
+            int nPreviousChar = 0; 
 
             foreach (char c in word)
             {
                 // Return "false" if the character being
                 // traversed is not a Roman numeral
-                // character
+                // character.
                 if (GetRomanNumeralValue(c) == 0)
                     return false;
 
@@ -182,13 +175,13 @@ namespace RAFIFluent.FluentComponents
                     nPreviousChar++;
 
                 // Roman numerals must not have four (4)
-                // succeeding characters that are the same
+                // succeeding characters that are the same.
                 if (nPreviousChar == 4)
                     return false;
 
                 if (GetRomanNumeralValue(c) > previousValue)
                 {
-                    // Subtractive Notation
+                    // Subtractive Notation.
                     switch (c)
                     {
                         case 'V':
@@ -216,6 +209,7 @@ namespace RAFIFluent.FluentComponents
             }
             return true;
         }
+
         public int GetRomanNumeralValue(char c)
         {
             int value = 0;

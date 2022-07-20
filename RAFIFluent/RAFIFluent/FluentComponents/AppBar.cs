@@ -10,21 +10,25 @@ namespace RAFIFluent.FluentComponents
     internal class AppBar : Frame
     {
         // Local Declarations
-        FluentColor colors = new FluentColor();
-        StackLayout appBar = new StackLayout();
-        StackLayout titles = new StackLayout();
-
-        Label title;
-        Label subtitle = new Label();
-        Persona persona = new Persona()
-        {
-            Source = "persona.png",
+        FluentColor _colors = new FluentColor();
+        StackLayout _appBar = new StackLayout();
+        StackLayout _titles = new StackLayout();
+        Label _title;
+        Label _subtitle = new Label();
+        Persona _persona = new Persona() 
+        { 
+            Source = "persona.png" 
         };
 
-        Icon icon = new Icon()
-        {
-            Source = "Logo.svg"
+        Icon _icon = new Icon() 
+        { 
+            Source = "Logo.svg" 
         };
+
+        // BindableProperties
+        public static readonly BindableProperty name = BindableProperty.Create(
+           "Name", typeof(string), typeof(AppBar), "");
+
 
         public static readonly BindableProperty iconSource = BindableProperty.Create(
           "IconSource", typeof(string), typeof(Icon), "Logo.svg");
@@ -35,7 +39,7 @@ namespace RAFIFluent.FluentComponents
             set
             {
                 SetValue(AppBar.iconSource, value);
-                icon.Source = value;
+                _icon.Source = value;
             }
         }
 
@@ -44,17 +48,17 @@ namespace RAFIFluent.FluentComponents
         {
             this.Padding = new Thickness(0, 0);
             this.Margin = new Thickness(0, 0);
-            this.Content = appBar;
+            this.Content = _appBar;
 
-            persona.Padding = new Thickness(0);
-            persona.Margin = new Thickness(0);
-            persona.FrameSize = FrameSizes.M;
-            persona.BackgroundColor = Color.Transparent;
+            _persona.Padding = new Thickness(0);
+            _persona.Margin = new Thickness(0);
+            _persona.FrameSize = FrameSizes.M;
+            _persona.BackgroundColor = Color.Transparent;
 
-            title = new Label()
+            _title = new Label()
             {
                 Text = "Title",
-                TextColor = colors.White,
+                TextColor = _colors.White,
                 FontSize = 20,
                 FontAttributes = FontAttributes.Bold,
                 VerticalOptions = LayoutOptions.Center,
@@ -62,36 +66,32 @@ namespace RAFIFluent.FluentComponents
                 Padding = new Thickness(0, 0),
             };
 
-            subtitle = new Label()
+            _subtitle = new Label()
             {
                 Text = "Subtitle",
-                TextColor = colors.White,
+                TextColor = _colors.White,
                 FontSize = 12,
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center,
                 Padding = new Thickness(0, 0),
             };
 
-            titles.Orientation = StackOrientation.Vertical;
-            titles.BackgroundColor = Color.Transparent;
-            titles.Spacing = 0;
-            titles.Children.Add(title);
-            titles.Children.Add(subtitle);
-            icon.Source = IconSource;
-            appBar.Orientation = StackOrientation.Horizontal;
-            appBar.BackgroundColor = Color.Transparent;
-            appBar.Spacing = 16;
-            appBar.BackgroundColor = colors.ThemePrimary;
-            appBar.HorizontalOptions = LayoutOptions.FillAndExpand;
-            appBar.VerticalOptions = LayoutOptions.Start;
-            appBar.Padding = new Thickness(15, 15);
-            appBar.Margin = new Thickness(0);
-            appBar.Children.Add(icon);
-            appBar.Children.Add(titles);
+            _titles.Orientation = StackOrientation.Vertical;
+            _titles.BackgroundColor = Color.Transparent;
+            _titles.Spacing = 0;
+            _titles.Children.Add(_title);
+            _titles.Children.Add(_subtitle);
+            _icon.Source = IconSource;
+            _appBar.Orientation = StackOrientation.Horizontal;
+            _appBar.BackgroundColor = Color.Transparent;
+            _appBar.Spacing = 16;
+            _appBar.BackgroundColor = _colors.ThemePrimary;
+            _appBar.HorizontalOptions = LayoutOptions.FillAndExpand;
+            _appBar.VerticalOptions = LayoutOptions.Start;
+            _appBar.Padding = new Thickness(15, 15);
+            _appBar.Margin = new Thickness(0);
+            _appBar.Children.Add(_icon);
+            _appBar.Children.Add(_titles);
         }
-
-        // BindableProperties
-        public static readonly BindableProperty name = BindableProperty.Create(
-           "Name", typeof(string), typeof(AppBar), "");
     }
 }

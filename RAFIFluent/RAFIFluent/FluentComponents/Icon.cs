@@ -10,12 +10,10 @@ namespace RAFIFluent.FluentComponents
 {
     public class Icon : SvgCachedImage
     {
-      
-        // Bindable Properties
+        // Bindable Properties + Getters and Setters
         public static readonly BindableProperty iconSource = BindableProperty.Create(
           "IconSource", typeof(string), typeof(Icon), "");
 
-        // Getters and Setters
         public string IconSource
         {
             get { return (string)GetValue(Icon.iconSource); }

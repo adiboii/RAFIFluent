@@ -6,11 +6,20 @@ namespace RAFIFluent.FluentComponents
 {
     public enum FrameSizes
     {
-        XS, // Extra Small
-        S, // Small
-        M, // Medium
-        L, // Large
-        XL, // Extra Large
-        XXL // X Extra Large
+        XS, 
+        S, 
+        M, 
+        L, 
+        XL, 
+        XXL 
     }
+
+
+    // R: Regular, L: Large
+    public enum SizeType
+    {
+        R,
+        L
+    }
+
 }

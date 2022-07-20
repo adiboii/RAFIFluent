@@ -7,12 +7,12 @@ namespace RAFIFluent.FluentComponents
     public class Toggle : Switch
     {
         //Local Decalarations
-        static FluentColor colors = new FluentColor();
+        static FluentColor _colors = new FluentColor();
 
 
         //Bindable Properties + Getters and Setters
         public static readonly BindableProperty activeThumbColor = BindableProperty.Create(
-         "ActiveThumbColor", typeof(Color), typeof(Chip), colors.ThemePrimary);
+         "ActiveThumbColor", typeof(Color), typeof(Chip), _colors.ThemePrimary);
 
         public Color ActiveThumbColor
         {
@@ -22,7 +22,7 @@ namespace RAFIFluent.FluentComponents
 
 
         public static readonly BindableProperty inactiveThumbColor = BindableProperty.Create(
-       "InactiveThumbColor", typeof(Color), typeof(Chip), colors.NeutralLight);
+       "InactiveThumbColor", typeof(Color), typeof(Chip), _colors.NeutralLight);
 
         public Color InactiveThumbColor
         {
@@ -32,7 +32,7 @@ namespace RAFIFluent.FluentComponents
 
 
         public static readonly BindableProperty activeOnColor = BindableProperty.Create(
-       "ActiveOnColor", typeof(Color), typeof(Chip), colors.ThemeTertiary);
+       "ActiveOnColor", typeof(Color), typeof(Chip), _colors.ThemeTertiary);
 
         public Color ActiveOnColor
         {
@@ -48,7 +48,10 @@ namespace RAFIFluent.FluentComponents
             InitVisualStates();   
         }
 
+        // Methods
+
         // Changing default colors of switch
+        // using Visual States.
         void InitVisualStates()
         {
             VisualStateManager.SetVisualStateGroups(this, new VisualStateGroupList

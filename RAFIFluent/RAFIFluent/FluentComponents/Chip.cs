@@ -7,13 +7,13 @@ using Xamarin.Forms;
 namespace RAFIFluent.FluentComponents
 {
 
-    // ! Will need to implement gesture detector first
+    // TODO: Implement gesture detector 
     public class Chip : Frame
     {
         // Local Declarations
-        FluentColor colors = new FluentColor();
-        Image image = new Image();
-        Label text = new Label();
+        Image _image = new Image();
+        Label _text = new Label();
+        StackLayout _stack = new StackLayout();
 
         // Bindable Properties + Getters and Setters
         public static readonly BindableProperty label = BindableProperty.Create(
@@ -25,10 +25,9 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(Chip.label, value); 
-                text.Text = value;
+                _text.Text = value;
             }
         }
-
 
         public static readonly BindableProperty textColor = BindableProperty.Create(
           "TextColor", typeof(Color), typeof(Chip), Color.Black);
@@ -39,10 +38,9 @@ namespace RAFIFluent.FluentComponents
             set
             {
                 SetValue(Chip.textColor, value);
-                text.TextColor = value;
+                _text.TextColor = value;
             }
         }
-
 
         public static readonly BindableProperty source = BindableProperty.Create(
           "Source", typeof(string), typeof(Chip), "profile.png");
@@ -53,34 +51,32 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(Chip.source, value); 
-                image.Source = value;
+                _image.Source = value;
             }
         }
 
         //Constructor
         public Chip()
         {
-            StackLayout stack = new StackLayout();
-            stack.Spacing = 5;
-            stack.Orientation = StackOrientation.Horizontal;
-            stack.BackgroundColor = Color.Transparent;
-            stack.VerticalOptions = LayoutOptions.Center;
-            stack.HorizontalOptions = LayoutOptions.Center;
-
-            image.WidthRequest = 15;
-            image.HeightRequest = 15;
-            image.VerticalOptions = LayoutOptions.Center;
-            image.HorizontalOptions = LayoutOptions.Center;
-
-            stack.Children.Add(image);
-            stack.Children.Add(text);
             this.HorizontalOptions = LayoutOptions.Center;
             this.VerticalOptions = LayoutOptions.Center;
             this.Padding = new Thickness(5, 5);
+            
+            _stack.Spacing = 5;
+            _stack.Orientation = StackOrientation.Horizontal;
+            _stack.BackgroundColor = Color.Transparent;
+            _stack.VerticalOptions = LayoutOptions.Center;
+            _stack.HorizontalOptions = LayoutOptions.Center;
 
-            this.Content = stack;
+            _image.WidthRequest = 15;
+            _image.HeightRequest = 15;
+            _image.VerticalOptions = LayoutOptions.Center;
+            _image.HorizontalOptions = LayoutOptions.Center;
+
+            _stack.Children.Add(_image);
+            _stack.Children.Add(_text);
+
+            this.Content = _stack;
         }
     }
 }
-
-// RAFIFluent

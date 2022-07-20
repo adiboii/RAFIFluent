@@ -7,17 +7,20 @@ namespace RAFIFluent.FluentComponents
 {
     public class CheckBox : Xamarin.Forms.CheckBox
     {
-
         // Local Decalarations
-        FluentColor colors = new FluentColor();
+        FluentColor _colors = new FluentColor();
 
+        // Constructor
         public CheckBox()
         {
             InitVisualStates();
         }
 
 
+        //Methods
+
         // Changing default colors of checkbox
+        // using Visual States.
         void InitVisualStates()
         {
             VisualStateManager.SetVisualStateGroups(this, new VisualStateGroupList
@@ -34,7 +37,7 @@ namespace RAFIFluent.FluentComponents
                             TargetType = typeof(Xamarin.Forms.CheckBox),
                             Setters =
                             {
-                                new Setter {Property = ColorProperty, Value = colors.NeutralTertiaryAlt }
+                                new Setter {Property = ColorProperty, Value = _colors.NeutralTertiaryAlt }
                             }
                         },
                         new VisualState
@@ -43,7 +46,7 @@ namespace RAFIFluent.FluentComponents
                             TargetType = typeof(Xamarin.Forms.CheckBox),
                             Setters =
                             {
-                                new Setter { Property = ColorProperty , Value = colors.ThemePrimary }
+                                new Setter { Property = ColorProperty , Value = _colors.ThemePrimary }
                             }
 
                         }

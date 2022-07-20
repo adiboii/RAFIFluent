@@ -7,6 +7,13 @@ namespace RAFIFluent.FluentComponents
 {
     public class FluentColor
     {
+
+        // RAFI Primary Colors
+        public Color RafiBlue = Color.FromHex(hex: "#759CB7");
+        public Color RafiYellow = Color.FromHex(hex: "#FDB913");
+        public Color RafiLightBlue = Color.FromHex(hex: "#C5D6E5");
+
+        // Microsoft Primary Colors
         public Color ThemeDarker = Color.FromHex(hex: "#004578");
         public Color ThemeDark = Color.FromHex(hex: "#005a9e");
         public Color ThemeDarkAlt = Color.FromHex(hex: "#106ebe");

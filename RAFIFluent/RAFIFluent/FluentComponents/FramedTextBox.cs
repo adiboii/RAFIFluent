@@ -9,18 +9,18 @@ namespace RAFIFluent.FluentComponents
 {
 
     //FramedTextBox is an icon and textbox
-    //in a stacklayout enclosed in a frame
-
+    //in a stacklayout enclosed in a frame.
     public class FramedTextBox : Xamarin.Forms.Frame
     {
 
         // Local Declarations
-        FluentColor colors = new FluentColor();
-        TextBox textbox = new TextBox();
-        Icon icon = new Icon();
-
+        FluentColor _colors = new FluentColor();
+        StackLayout _stack = new StackLayout();
+        TextBox _textbox = new TextBox();
+        Icon _icon = new Icon();
 
         // Bindable Properties + Getters and Setters
+
         public static readonly BindableProperty placeHolder = BindableProperty.Create(
            "PlaceHolder", typeof(string), typeof(FramedTextBox), "Search");
         public string PlaceHolder 
@@ -29,7 +29,7 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(FramedTextBox.placeHolder, value);
-                textbox.Placeholder = value;
+                _textbox.Placeholder = value;
             } 
         }
 
@@ -51,7 +51,7 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(FramedTextBox.textColor, value);
-                textbox.TextColor = value;
+                _textbox.TextColor = value;
             }
         }
 
@@ -64,7 +64,7 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(FramedTextBox.placeholderColor, value);
-                textbox.PlaceholderColor = value;
+                _textbox.PlaceholderColor = value;
             }
         }
 
@@ -77,31 +77,33 @@ namespace RAFIFluent.FluentComponents
             set 
             { 
                 SetValue(Icon.iconSource, value); 
-                icon.Source = value;
+                _icon.Source = value;
             }
         }
 
         
-        
+        // Constructor
         public FramedTextBox()
         {
-            BackgroundColor = colors.NeutralLight;
-            Padding = new Thickness(10, 0);
-            Margin = new Thickness(0);
+            this.BackgroundColor = _colors.NeutralLight;
+            this.Padding = new Thickness(10, 0);
+            this.Margin = new Thickness(0);
 
-            StackLayout stack = new StackLayout();
-            stack.Spacing = 5;
-            stack.Orientation = StackOrientation.Horizontal;
-            textbox.FontSize = 14;
-            textbox.HorizontalOptions = LayoutOptions.FillAndExpand;
-            textbox.ClearButtonVisibility = ClearButtonVisibility.WhileEditing;
-            //image to add later
-            icon.IconSource = IconSource;
-            icon.HeightRequest = 20;
-            icon.WidthRequest = 20;
-            stack.Children.Add(icon);
-            stack.Children.Add(textbox);
-            Content = stack;
+            _stack.Spacing = 5;
+            _stack.Orientation = StackOrientation.Horizontal;
+
+            _textbox.FontSize = 14;
+            _textbox.HorizontalOptions = LayoutOptions.FillAndExpand;
+            _textbox.ClearButtonVisibility = ClearButtonVisibility.WhileEditing;
+
+            _icon.IconSource = IconSource;
+            _icon.HeightRequest = 20;
+            _icon.WidthRequest = 20;
+
+            _stack.Children.Add(_icon);
+            _stack.Children.Add(_textbox);
+
+            this.Content = _stack;
         }
     }
 }
