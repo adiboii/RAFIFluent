@@ -88,7 +88,7 @@
     <AndroidResource Include="Resources\drawable\profile.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RAFIFluent\component.xamarin.fluentui.csproj">
+    <ProjectReference Include="..\component.xamarin.fluentui\component.xamarin.fluentui.csproj">
       <Project>{77829CCD-7727-497F-827C-055A6EAC44F9}</Project>
       <Name>component.xamarin.fluentui</Name>
     </ProjectReference>
